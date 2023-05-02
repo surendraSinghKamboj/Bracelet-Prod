@@ -5,14 +5,25 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Drawer,
+  useTheme,
+  useMediaQuery,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material";
 import React, { useState } from "react";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/logo.png";
 import FlexBetween from "./FlexBetween";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <AppBar
@@ -41,48 +52,129 @@ const Navbar = () => {
             height: { xs: "40px", sm: "50px", md: "65px", lg: "80px" },
           }}
         ></Box>
-        <FlexBetween
-          gap="1.5rem"
-          sx={{
-            display: {
-              xs: "none",
-              sm: "none",
-              md: "flex",
-            },
-          }}
-        >
-          <Typography fontSize="16px" sx={{ color: "white" }}>
-            About
-          </Typography>
-          <Typography fontSize="16px" sx={{ color: "white" }}>
-            Services
-          </Typography>
-          <Typography fontSize="16px" sx={{ color: "white" }}>
-            Gallery
-          </Typography>
-          <Typography fontSize="16px" sx={{ color: "white" }}>
-            Contact
-          </Typography>
-          <Button
-            variant="contained"
+
+        {isMobile ? (
+          <Box component="nav">
+            <Drawer
+              open={isSidebarOpen}
+              onClose={() => {
+                setIsSidebarOpen(false);
+              }}
+              sx={{ "& .MuiDrawer-paper": { backgroundColor: "black" } }}
+            >
+              <List>
+                <ListItem>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <ListItemText>
+                        <Typography
+                          width="150px"
+                          sx={{
+                            fontFamily: `"Poppins", "sans-serif"`,
+                            color: "white",
+                          }}
+                        >
+                          About
+                        </Typography>
+                      </ListItemText>
+                    </ListItemIcon>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <ListItemText>
+                        <Typography
+                          sx={{
+                            fontFamily: `"Poppins", "sans-serif"`,
+                            color: "white",
+                          }}
+                        >
+                          Services
+                        </Typography>
+                      </ListItemText>
+                    </ListItemIcon>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <ListItemText>
+                        <Typography
+                          sx={{
+                            fontFamily: `"Poppins", "sans-serif"`,
+                            color: "white",
+                          }}
+                        >
+                          Gallery
+                        </Typography>
+                      </ListItemText>
+                    </ListItemIcon>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <ListItemText>
+                        <Typography
+                          sx={{
+                            fontFamily: `"Poppins", "sans-serif"`,
+                            color: "white",
+                          }}
+                        >
+                          Contact
+                        </Typography>
+                      </ListItemText>
+                    </ListItemIcon>
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </Drawer>
+            <IconButton
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              sx={{
+                color: "white",
+                display: { xs: "block", sm: "block", md: "block", lg: "block" },
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
+        ) : (
+          <FlexBetween
+            gap="1.5rem"
             sx={{
-              backgroundColor: "#FFD60A",
-              color: "#003566",
-              fontWeight: "bold",
+              display: {
+                xs: "none",
+                sm: "none",
+                md: "flex",
+              },
             }}
           >
-            Get a Quote
-          </Button>
-          <IconButton
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            sx={{
-              color: "white",
-              display: { xs: "block", sm: "block", md: "block", lg: "block" },
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </FlexBetween>
+            <Typography fontSize="16px" sx={{ color: "white" }}>
+              About
+            </Typography>
+            <Typography fontSize="16px" sx={{ color: "white" }}>
+              Services
+            </Typography>
+            <Typography fontSize="16px" sx={{ color: "white" }}>
+              Gallery
+            </Typography>
+            <Typography fontSize="16px" sx={{ color: "white" }}>
+              Contact
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#FFD60A",
+                color: "#003566",
+                fontWeight: "bold",
+              }}
+            >
+              Get a Quote
+            </Button>
+          </FlexBetween>
+        )}
       </Toolbar>
     </AppBar>
   );
