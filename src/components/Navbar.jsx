@@ -10,9 +10,7 @@ import React, { useState } from "react";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/logo.png";
 import FlexBetween from "./FlexBetween";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
+
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -75,41 +73,15 @@ const Navbar = () => {
           >
             Get a Quote
           </Button>
-
-          <div>
-            <IconButton
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              id="fade-button"
-              aria-controls={isSidebarOpen ? "fade-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={isSidebarOpen ? "true" : undefined}
-              sx={{
-                color: "white",
-                display: { xs: "block", sm: "block", md: "block", lg: "block" },
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="fade-menu"
-              MenuListProps={{
-                "aria-labelledby": "fade-button",
-              }}
-              open={isSidebarOpen}
-              onClose={setIsSidebarOpen(!isSidebarOpen)}
-              TransitionComponent={Fade}
-            >
-              <MenuItem onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                Profile
-              </MenuItem>
-              <MenuItem onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                My account
-              </MenuItem>
-              <MenuItem onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                Logout
-              </MenuItem>
-            </Menu>
-          </div>
+          <IconButton
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            sx={{
+              color: "white",
+              display: { xs: "block", sm: "block", md: "block", lg: "block" },
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
         </FlexBetween>
       </Toolbar>
     </AppBar>
