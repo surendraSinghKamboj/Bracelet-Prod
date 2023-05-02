@@ -15,7 +15,7 @@ const Gallery = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Box sx={{ padding: "3rem 3rem", background: "black" }}>
+    <Box sx={{ padding: "3rem 3rem", background: "black" }} id="Gallery">
       <Typography
         sx={{
           color: "#FFC300",
@@ -35,7 +35,7 @@ const Gallery = () => {
       </Typography>
       <Swiper
         autoplay={{
-          delay: 100000000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         slidesPerView={isMobile ? "1" : "3"}

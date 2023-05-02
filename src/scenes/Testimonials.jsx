@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { EffectCoverflow, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
 const Testimonials = () => {
   const theme = useTheme();
@@ -46,8 +46,13 @@ const Testimonials = () => {
       <Box className="testimonials">
         <Swiper
           effect={"coverflow"}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
           grabCursor={true}
           centeredSlides={true}
+          modules={[Autoplay]}
           slidesPerView={isMobile ? "1" : "3"}
           loop={true}
           coverflowEffect={{

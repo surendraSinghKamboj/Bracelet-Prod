@@ -31,7 +31,7 @@ const ContactUs = () => {
           fontFamily: `"Righteous", "cursive"`,
           fontSize: {
             xs: "24px",
-            sm: "32px",
+            sm: "28px",
             md: "36x",
             lg: "42px",
           },

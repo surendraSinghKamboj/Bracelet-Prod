@@ -9,6 +9,7 @@ import Testimonials from "./scenes/Testimonials";
 import ValuableClients from "./scenes/ValuableClients";
 import Gallery from "./scenes/Gallery";
 import { BrowserRouter } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +20,7 @@ function App() {
         <AboutUs></AboutUs>
         <Services></Services>
         <Testimonials></Testimonials>
-        <Gallery id="Gallery"></Gallery>
+        <Gallery></Gallery>
         <ValuableClients></ValuableClients>
 
         <ContactUs></ContactUs>

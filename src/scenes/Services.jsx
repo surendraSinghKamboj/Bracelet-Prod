@@ -9,6 +9,7 @@ const Service = styled(FlexBetween)({
   width: "25vw",
   height: "180px",
   gap: "2rem",
+  margin: "0 auto",
 });
 
 const ServiceTitle = styled(Typography)({
@@ -26,6 +27,7 @@ const ServiceText = styled(Typography)({
 const Services = () => {
   return (
     <Box
+      id="Services"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -81,6 +83,7 @@ const Services = () => {
               md: "40vw",
               lg: "25vw",
             },
+
             minHeight: { xs: "125px", sm: "160px", md: "180px" },
           }}
         >

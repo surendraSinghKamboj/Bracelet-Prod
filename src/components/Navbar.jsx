@@ -63,8 +63,12 @@ const Navbar = () => {
               sx={{ "& .MuiDrawer-paper": { backgroundColor: "black" } }}
             >
               <List>
-                <Link to="/#Gallery" smooth>
-                  <ListItem>
+                <Link to="#About" smooth>
+                  <ListItem
+                    onClick={() => {
+                      setIsSidebarOpen(!isSidebarOpen);
+                    }}
+                  >
                     <ListItemButton>
                       <ListItemIcon>
                         <ListItemText>
@@ -82,61 +86,87 @@ const Navbar = () => {
                     </ListItemButton>
                   </ListItem>
                 </Link>
-                <ListItem>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <ListItemText>
-                        <Typography
-                          sx={{
-                            fontFamily: `"Poppins", "sans-serif"`,
-                            color: "white",
-                          }}
-                        >
-                          Services
-                        </Typography>
-                      </ListItemText>
-                    </ListItemIcon>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <ListItemText>
-                        <Typography
-                          sx={{
-                            fontFamily: `"Poppins", "sans-serif"`,
-                            color: "white",
-                          }}
-                        >
-                          Gallery
-                        </Typography>
-                      </ListItemText>
-                    </ListItemIcon>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <ListItemText>
-                        <Typography
-                          sx={{
-                            fontFamily: `"Poppins", "sans-serif"`,
-                            color: "white",
-                          }}
-                        >
-                          Contact
-                        </Typography>
-                      </ListItemText>
-                    </ListItemIcon>
-                  </ListItemButton>
-                </ListItem>
+                <Link to="#Services" smooth>
+                  <ListItem
+                    onClick={() => {
+                      setIsSidebarOpen(!isSidebarOpen);
+                    }}
+                  >
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <ListItemText>
+                          <Typography
+                            width="150px"
+                            sx={{
+                              fontFamily: `"Poppins", "sans-serif"`,
+                              color: "white",
+                            }}
+                          >
+                            Services
+                          </Typography>
+                        </ListItemText>
+                      </ListItemIcon>
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
+                <Link to="#Gallery" smooth>
+                  <ListItem
+                    onClick={() => {
+                      setIsSidebarOpen(!isSidebarOpen);
+                    }}
+                  >
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <ListItemText>
+                          <Typography
+                            width="150px"
+                            sx={{
+                              fontFamily: `"Poppins", "sans-serif"`,
+                              color: "white",
+                            }}
+                          >
+                            Gallery
+                          </Typography>
+                        </ListItemText>
+                      </ListItemIcon>
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
+                <Link to="#Project" smooth>
+                  <ListItem
+                    onClick={() => {
+                      setIsSidebarOpen(!isSidebarOpen);
+                    }}
+                  >
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <ListItemText>
+                          <Typography
+                            width="150px"
+                            sx={{
+                              fontFamily: `"Poppins", "sans-serif"`,
+                              color: "white",
+                            }}
+                          >
+                            Project
+                          </Typography>
+                        </ListItemText>
+                      </ListItemIcon>
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
               </List>
             </Drawer>
             <IconButton
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               sx={{
                 color: "white",
-                display: { xs: "block", sm: "block", md: "block", lg: "block" },
+                display: {
+                  xs: "block",
+                  sm: "block",
+                  md: "block",
+                  lg: "block",
+                },
               }}
             >
               <MenuIcon />
@@ -153,18 +183,26 @@ const Navbar = () => {
               },
             }}
           >
-            <Typography fontSize="16px" sx={{ color: "white" }}>
-              About
-            </Typography>
-            <Typography fontSize="16px" sx={{ color: "white" }}>
-              Services
-            </Typography>
-            <Typography fontSize="16px" sx={{ color: "white" }}>
-              Gallery
-            </Typography>
-            <Typography fontSize="16px" sx={{ color: "white" }}>
-              Contact
-            </Typography>
+            <Link to="#About" smooth>
+              <Typography fontSize="16px" sx={{ color: "white" }}>
+                About
+              </Typography>
+            </Link>
+            <Link to="#Services" smooth>
+              <Typography fontSize="16px" sx={{ color: "white" }}>
+                Services
+              </Typography>
+            </Link>
+            <Link to="#Gallery" smooth>
+              <Typography fontSize="16px" sx={{ color: "white" }}>
+                Gallery
+              </Typography>
+            </Link>
+            <Link to="#Project" smooth>
+              <Typography fontSize="16px" sx={{ color: "white" }}>
+                Project
+              </Typography>
+            </Link>
             <Button
               variant="contained"
               sx={{
