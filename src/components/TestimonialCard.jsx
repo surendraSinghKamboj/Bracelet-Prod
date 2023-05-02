@@ -35,7 +35,12 @@ export default function ImgMediaCard() {
               textAlign: "center",
               color: "white",
               fontFamily: `"Poppins", "sans-serif"`,
-              fontSize: "20px",
+              fontSize: {
+                xs: "16px",
+                sm: "16px",
+                md: "18px",
+                lg: "20px",
+              },
             }}
           >
             Lizards are a widespread group of squamate reptiles, with over 6,000

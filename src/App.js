@@ -8,21 +8,24 @@ import ContactUs from "./scenes/ContactUs";
 import Testimonials from "./scenes/Testimonials";
 import ValuableClients from "./scenes/ValuableClients";
 import Gallery from "./scenes/Gallery";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div className="app">
-      <CssBaseline></CssBaseline>
-      <Navbar></Navbar>
-      <HomeScreen></HomeScreen>
-      <AboutUs></AboutUs>
-      <Services></Services>
-      <Testimonials></Testimonials>
-      <Gallery></Gallery>
-      <ValuableClients></ValuableClients>
+    <BrowserRouter>
+      <div className="app">
+        <CssBaseline></CssBaseline>
+        <Navbar></Navbar>
+        <HomeScreen></HomeScreen>
+        <AboutUs></AboutUs>
+        <Services></Services>
+        <Testimonials></Testimonials>
+        <Gallery id="Gallery"></Gallery>
+        <ValuableClients></ValuableClients>
 
-      <ContactUs></ContactUs>
-      <Footer></Footer>
-    </div>
+        <ContactUs></ContactUs>
+        <Footer></Footer>
+      </div>
+    </BrowserRouter>
   );
 }
 

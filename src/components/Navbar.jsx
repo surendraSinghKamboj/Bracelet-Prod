@@ -18,7 +18,7 @@ import React, { useState } from "react";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/logo.png";
 import FlexBetween from "./FlexBetween";
-import Sidebar from "./Sidebar";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -63,23 +63,25 @@ const Navbar = () => {
               sx={{ "& .MuiDrawer-paper": { backgroundColor: "black" } }}
             >
               <List>
-                <ListItem>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <ListItemText>
-                        <Typography
-                          width="150px"
-                          sx={{
-                            fontFamily: `"Poppins", "sans-serif"`,
-                            color: "white",
-                          }}
-                        >
-                          About
-                        </Typography>
-                      </ListItemText>
-                    </ListItemIcon>
-                  </ListItemButton>
-                </ListItem>
+                <Link to="/#Gallery" smooth>
+                  <ListItem>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <ListItemText>
+                          <Typography
+                            width="150px"
+                            sx={{
+                              fontFamily: `"Poppins", "sans-serif"`,
+                              color: "white",
+                            }}
+                          >
+                            About
+                          </Typography>
+                        </ListItemText>
+                      </ListItemIcon>
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
                 <ListItem>
                   <ListItemButton>
                     <ListItemIcon>

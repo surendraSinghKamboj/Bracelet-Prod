@@ -7,7 +7,10 @@ import AboutUs2Pic from "../assets/AboutUs_2.png";
 const AboutUs = () => {
   return (
     <>
-      <FlexBetween sx={{ padding: "4rem", backgroundColor: "black" }}>
+      <FlexBetween
+        sx={{ padding: "4rem", backgroundColor: "black" }}
+        id="About"
+      >
         <Box
           sx={{
             display: "flex",
@@ -27,7 +30,7 @@ const AboutUs = () => {
               md: "4rem",
               lg: "6rem",
             },
-            textAlign: { xs: "justify", sm: "justfiy", md: "left", lg: "left" },
+            textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
           }}
         >
           <Typography
@@ -122,7 +125,7 @@ const AboutUs = () => {
             color: "white ",
             gap: "2rem",
             paddingLeft: { xs: "none", sm: "none", md: "4rem", lg: "6rem" },
-            textAlign: { xs: "justify", sm: "justfiy", md: "left", lg: "left" },
+            textAlign: { xs: "center", sm: "center", md: "left", lg: "left" },
           }}
         >
           <Typography

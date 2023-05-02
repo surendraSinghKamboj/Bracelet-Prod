@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import FlexBetween from "../components/FlexBetween";
 import TestimonidalCard from "../components/TestimonialCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,8 +11,20 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
 
 const Testimonials = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Box sx={{ padding: "3rem 3rem 8rem", background: "black" }}>
+    <Box
+      sx={{
+        padding: {
+          xs: "0.5rem 0.5rem 8rem",
+          sm: "0.5rem 0.5rem 8rem",
+          md: "1.5rem 1.5rem 8rem",
+          lg: "3rem 3rem 8rem 8rem",
+        },
+        background: "black",
+      }}
+    >
       <Box>
         <Typography
           sx={{
@@ -36,7 +48,7 @@ const Testimonials = () => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={"auto"}
+          slidesPerView={isMobile ? "1" : "3"}
           loop={true}
           coverflowEffect={{
             rotate: 50,

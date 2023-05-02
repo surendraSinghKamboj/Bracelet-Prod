@@ -17,12 +17,14 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/system";
 
 const ValuableClients = () => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <>
@@ -49,7 +51,7 @@ const ValuableClients = () => {
         className="clientSwiper"
         spaceBetween={30}
         centeredSlides={true}
-        slidesPerView={"4"}
+        slidesPerView={isMobile ? "auto" : "4"}
         loop={true}
         autoplay={{
           delay: 1000,

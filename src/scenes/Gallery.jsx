@@ -9,9 +9,11 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 
 const Gallery = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box sx={{ padding: "3rem 3rem", background: "black" }}>
       <Typography
@@ -36,7 +38,7 @@ const Gallery = () => {
           delay: 100000000,
           disableOnInteraction: false,
         }}
-        slidesPerView={"auto"}
+        slidesPerView={isMobile ? "1" : "3"}
         spaceBetween={30}
         modules={[Pagination, Navigation, Autoplay]}
         grabCursor={true}
