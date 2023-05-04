@@ -34,7 +34,7 @@ const Contactus = () => {
   };
 
   return (
-    <FlexBetween sx={{ background: "black", flexWrap: "wrap" }}>
+    <FlexBetween sx={{ background: "black", flexWrap: "wrap" }} id="contact">
       <FlexBetween
         sx={{
           width: {

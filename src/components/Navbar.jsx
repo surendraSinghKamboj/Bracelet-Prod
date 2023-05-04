@@ -198,9 +198,9 @@ const Navbar = () => {
                 Gallery
               </Typography>
             </Link>
-            <Link to="#Project" smooth>
+            <Link to="#contact" smooth>
               <Typography fontSize="16px" sx={{ color: "white" }}>
-                Project
+                Contact
               </Typography>
             </Link>
             <Button
