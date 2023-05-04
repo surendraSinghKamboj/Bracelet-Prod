@@ -9,6 +9,7 @@ import Testimonials from "./scenes/Testimonials";
 import ValuableClients from "./scenes/ValuableClients";
 import Gallery from "./scenes/Gallery";
 import { BrowserRouter } from "react-router-dom";
+import Contactus from "./scenes/Contactus";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Gallery></Gallery>
         <ValuableClients></ValuableClients>
 
-        <ContactUs></ContactUs>
+        {/* <ContactUs></ContactUs> */}
+        <Contactus></Contactus>
         <Footer></Footer>
       </div>
     </BrowserRouter>
