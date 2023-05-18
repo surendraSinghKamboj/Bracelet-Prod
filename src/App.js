@@ -24,8 +24,8 @@ function App() {
         <Gallery></Gallery>
         <ValuableClients></ValuableClients>
 
-        {/* <ContactUs></ContactUs> */}
-        <Contactus></Contactus>
+        <ContactUs></ContactUs> 
+      {/* <Contactus></Contactus> */}
         <Footer></Footer>
       </div>
     </BrowserRouter>
